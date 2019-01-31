@@ -11,4 +11,7 @@ public class ArConstants {
 	public static final String DUPLICATE = "duplicate email id";
 	public static final String UNIQUE = "VALID";
 	
+	public static final String EMAIL_FROM = "bmudholkar3@gmail.com";
+	public static final String EMAIL_SUBJECT = "HIS Application Registration succcessfull";
+	
 }

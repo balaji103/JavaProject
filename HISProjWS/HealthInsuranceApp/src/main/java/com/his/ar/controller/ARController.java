@@ -29,7 +29,7 @@ public class ARController {
 	 * @param model
 	 * @return string
 	 */
-	@RequestMapping(name = "/userReg", method = RequestMethod.GET)
+	@RequestMapping(value = "/userReg", method = RequestMethod.GET)
 	public String userRegister(Model model) {
 		//create and return UserMoDel object
 		UserModel userModel = new UserModel();
@@ -60,7 +60,7 @@ public class ARController {
 	 * @return String
 	 */
 
-	@RequestMapping(name = "/userReg", method = RequestMethod.POST)
+	@RequestMapping(value = "/userReg", method = RequestMethod.POST)
 	public String registerUser(@ModelAttribute("formModel") UserModel userModel, Model model) {
 		// Use service
 		int count = service.saveUser(userModel);
@@ -76,11 +76,10 @@ public class ARController {
 	}
 	
 	
-	  @RequestMapping(name="/checkEmail") 
+	  @RequestMapping(value="/userReg/checkEmail") 
 	  public @ResponseBody String checkUserEmail(@RequestParam("email") String email) { 
-		  System.out.println("emailCheck");
-		  //return service.checkUserMail(email); 
-		return "DUPLICATE";  
+		 // System.out.println("emailCheck");
+		  return service.checkUserMail(email); 
 	  }
 	 
 }// class

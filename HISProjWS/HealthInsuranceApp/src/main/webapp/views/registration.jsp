@@ -1,10 +1,10 @@
-<%@ page language="java" isELIgnored="false" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" isELIgnored="false" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -15,22 +15,20 @@
 <script>
 
 	
-	$(function() {
+	 $(function() {
 		$("#email").blur(function(){
 			var enteredEmail = $("#email").val();
 			 $.ajax({
 				url: window.location+"/checkEmail", 
 				data: "email="+enteredEmail,
 				success: function(result){
-					alert("Email-->."+window.location+"checkEmail");
-					alert($("#userRegForm").attr("action"));
 					if(result=='DUPLICATE'){
 						alert("Email---------------->.");
 						
 			             $("#emailMsg").html(DUPLICATE);
 			             $("#email").focus();
 					}
-					alert("Email-->."+enteredEmail);
+					//alert("Email-->."+enteredEmail);
 			  }}); 
 			  
 			});
@@ -40,7 +38,7 @@
 			changeYear : true,
 			maxDate : new Date()
 		});
-	});
+	}); 
 </script>
 
 <title>Registration Form</title>
